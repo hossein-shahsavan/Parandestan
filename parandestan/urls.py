@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls', namespace='accounts')),
-    path('', include('core.urls', namespace='core')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    path('account/', include('accounts.urls', namespace='account')),
     path('news/', include('news.urls', namespace='news')),
+    path('', include('core.urls', namespace='core')),
 ]
+
+admin.site.site_header = 'Parandestan Admin Panel'
+admin.site.site_title = 'Parandestan Administration'
+admin.site.index_title = 'Welcome To Parandestan Administration'
+

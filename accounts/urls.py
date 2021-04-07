@@ -2,7 +2,7 @@ from django.urls import path
 from rest_auth.views import LogoutView
 from . import views
 
-app_name = 'accounts'
+app_name = 'account'
 urlpatterns = [
 
     path('validate_phone/', views.ValidatePhoneSendOTP.as_view(), name='validate_phone'),

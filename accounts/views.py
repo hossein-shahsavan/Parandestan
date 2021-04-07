@@ -129,7 +129,7 @@ class ValidateOTP(APIView):
 
                     return Response({
                         'status': True,
-                        'detail': 'OTP matched, Please proceed to save password'
+                        'detail': 'OTP matched, Please proceed to create account'
                     }, status=HTTP_200_OK
                     )
                 else:

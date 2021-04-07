@@ -39,7 +39,6 @@ class User(AbstractBaseUser):
                                  message="Phone number must be entered in the format: '09111111111'")
     phone = models.CharField(validators=[phone_regex], max_length=11, unique=True)
     email = models.EmailField(max_length=255, null=True, blank=True)
-    # cart_number = models.PositiveBigIntegerField(null=True, blank=True)  # shomare cart banki
     birth_day = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
